@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Cake</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -18,23 +28,42 @@
     <!-- header start -->
     <header class="header">
         <div class="logoContent">
-            <a href="#" class="logo"><img src="../images/logo.png" alt="Logo">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Logo">
                 <h1 class="logoName">Sweet Cake </h1>
             </a>
 
         </div>
 
         <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#product">product</a>
-            <a href="#blogs">about us</a>
-            <a href="#review">review</a>
-            <a href="#contact">contact</a>
+            <ul class="navbar-nav navbar-expand">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#product">product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blogs">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#review">review</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                        reservation
+                    </a>
+                    <div class="dropdown-menu position-absolute">
+                        <a class="dropdown-item" href="#">reservation form</a>
+                        <a class="dropdown-item" href="#">contact</a>
+                    </div>
+                </li>
+            </ul>
+
         </nav>
 
         <div class="icon">
             <i class="fas fa-search" id="search"></i>
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user" data-toggle="modal" data-target="#myModal"></i>
             <i class="fas fa-bars" id="menu-bar"></i>
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
@@ -45,6 +74,55 @@
 
     </header>
     <!-- header end -->
+
+    <!-- modal login start -->
+    <div class="row">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Login</h3>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form">
+                            <div class="form-group text-center col-12">
+                                <input class="form-control col-10 d-inline-block" type="email" name="email" id="email"
+                                    placeholder="Email">
+                                <div class="icon d-inline-block pl-2">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="form-group text-center col-12">
+                                <input class="form-control col-10 d-inline-block" type="password" name="pass" id="pass"
+                                    placeholder="Password">
+                                <div class="icon d-inline-block pl-2">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex justify-content-around">
+                                <label for="" class="form-check-label">
+                                    <input class="form-check d-inline" type="checkbox" name="rememberMe"
+                                        id="rememberMe">
+                                    Remember me
+                                </label>
+                                <label for="">
+                                    <a href="#">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div class="form-group text-center col-12">
+                                <button type="submit" class="btn btn-success login-bt">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Don't have an account? <a href="#">Register</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal login end -->
 
     <!-- home start -->
     <section class="home" id="home">
@@ -113,8 +191,13 @@
                         <img src="../images/product/sample_packs/BPDIYKitEcom.webp" alt="BPDIYKitEcom">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            DIY Banana Pudding Kit
+                        </h3>
+                        <p>
+                            Each Magnolia Bakery "Do it Yourself" Banana Pudding Kit includes the ingredients for making
+                            Magnolia Bakery’s world-famous, classic banana pudding all by yourself! All you need to
+                            supply are the serving containers, bananas & heavy cream.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -126,8 +209,13 @@
                         <img src="../images/product/sample_packs/Mother_sDaySampler.webp" alt="Mother_sDaySampler">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            Mother's Day Dessert Sampler Pack
+                        </h3>
+                        <p>
+                            Make your mom feel extra special this Mother's Day with our delicious Magnolia Bakery
+                            Dessert Sampler Pack! Our pack includes a delicious assortment of chocolate and vanilla
+                            cupcakes, each adorned with a beautiful hand-piped flower buttercream.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -146,8 +234,13 @@
                             alt="BananaPuddingLoversSamplerPack">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            Banana Pudding Lovers' Sampler Pack
+                        </h3>
+                        <p>
+                            For all the devoted banana pudding lovers out there, we've created a delicious sampler of
+                            our best-selling Banana Pudding desserts just for you! This sampler features 6 cups of our
+                            classic banana pudding and 6 of our right-from-the-oven, soft-baked, banana pudding cookies.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -160,8 +253,13 @@
                             alt="BananaPuddingVarietyPack">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            World-Famous Banana Pudding Variety Multipack
+                        </h3>
+                        <p>
+                            This online exclusive variety pack combines three of our most popular world-famous banana
+                            pudding flavors in one pack! Each multipack includes two Red Velvet Banana Pudding cups, two
+                            Chocolate Hazelnut Banana Pudding cups and two Classic Banana Pudding cups.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -174,8 +272,13 @@
                             alt="BestofMagnoliaBakerySamplerPack">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            "Best of Magnolia Bakery" Baked Fresh Sampler Pack
+                        </h3>
+                        <p>
+                            Our first-ever 'baked-fresh' sampler lets you choose between our Classic or Variety Banana
+                            Pudding Multipack, AND a Brownie & Blondie Combo, with four of our buttery blondies and four
+                            of our chocolatey, chewy brownies.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -187,8 +290,13 @@
                         <img src="../images/product/world_famous/Classic6Pack.webp" alt="Classic6Pack">
                     </div>
                     <div class="product-content">
-                        <h3>Chocolate</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
+                        <h3>
+                            Classic Banana Pudding Multipack
+                        </h3>
+                        <p>
+                            You don’t need to visit one of our bakeries to indulge in our iconic banana pudding. This
+                            multipack includes six individual cups of creamy bliss, packed with vanilla wafers, fresh
+                            bananas, and creamy vanilla pudding.
                         </p>
                         <div class="orderNow">
                             <button>Order Now </button>
@@ -205,57 +313,154 @@
 
     <!-- blogs start -->
     <section class="blogs" id="blogs">
-
-        <div class=" swiper blogs-row">
-            <div class="swiper-wrapper">
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="../images/blog-img1.png" alt="">
+        <div class="heading">
+            <h2>Our Best Seller</h2>
+        </div>
+        <!--  -->
+        <div class="lst">
+            <div class="slide_wrapper">
+                <div id="slide-img">
+                    <div class="item"
+                        style="background-image: url('../images/product/BestSeller/BananaPuddingLoversSamplerPack.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    Banana Pudding Lovers' Sampler Pack
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    For all the devoted banana pudding lovers out there, we've created a delicious
+                                    sampler of our best-selling Banana Pudding desserts just for you! This sampler
+                                    features 6 cups of our classic banana pudding and 6 of our right-from-the-oven,
+                                    soft-baked, banana pudding cookies.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
                     </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolorum voluptatum
-                            corporis accusamus aperiam fugiat tempora blanditiis labore dolor aliquid maxime nobis
-                            laborum sed soluta voluptatibus aspernatur natus, dicta quisquam.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab ullam reiciendis sint
-                            eaque at.</p>
-                        <a href="#blogs" class="btn">learn more</a>
+                    <div class="item"
+                        style="background-image: url('../images/product/BestSeller/BestofMagnoliaBakerySamplerPack.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    "Best of Magnolia Bakery" Sampler Pack
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Can’t decide between banana pudding and cupcakes? Get both! Our sampler packs
+                                    include an assortment of two fan favorites: our delicious cupcakes and world-famous
+                                    banana pudding.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url('../images/product/BestSeller/BouquetBundleMother_sDay.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    Cookies and Cupcakes Bouquet Bundle
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Celebrate the most important women in your life with our special Mother's Day
+                                    Cookies and Cupcakes Bouquet Bundle! This limited-edition bundle includes four
+                                    buttercream-topped cookies, each adorned with a special hand-piped flower design, as
+                                    well as six hand-piped flower cupcakes in a delicious assortment of flavors.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url('../images/product/BestSeller/ChocolatePuddingPie.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    Chocolate Pudding Icebox Pie
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Rich and chocolatey, though refreshingly light and cool, our chocolate pudding
+                                    icebox pie comes with a graham cracker crust topped with clouds of whipped cream and
+                                    chocolate shavings.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item"
+                        style="background-image: url('../images/product/BestSeller/Mother_sDaySampler.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    Mother's Day Dessert Sampler Pack
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Make your mom feel extra special this Mother's Day with our delicious Magnolia
+                                    Bakery Dessert Sampler Pack! Our pack includes a delicious assortment of chocolate
+                                    and vanilla cupcakes, each adorned with a beautiful hand-piped flower buttercream.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url('../images/product/BestSeller/RVCheesecake.webp')">
+                        <div class="content">
+                            <div class="name">
+                                <h5>
+                                    Red Velvet Cheesecake
+                                </h5>
+                            </div>
+                            <div class="text">
+                                <p>
+                                    Our prized red velvet cake—but make it cheesecake! Rich, chocolatey, and subtly tart
+                                    cheese rests on a chocolate cookie crumb crust, with a dollop of whipped cream and
+                                    chocolate shavings on top.
+                                </p>
+                            </div>
+                            <button type="button">
+                                <a href="#">
+                                    See more...
+                                </a>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="../images/blog-img2.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolorum voluptatum
-                            corporis accusamus aperiam fugiat tempora blanditiis labore dolor aliquid maxime nobis
-                            laborum sed soluta voluptatibus aspernatur natus, dicta quisquam.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab ullam reiciendis sint
-                            eaque at.</p>
-                        <a href="#blogs" class="btn">learn more</a>
-                    </div>
-                </div>
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="../images/blog-img2.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolorum voluptatum
-                            corporis accusamus aperiam fugiat tempora blanditiis labore dolor aliquid maxime nobis
-                            laborum sed soluta voluptatibus aspernatur natus, dicta quisquam.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab ullam reiciendis sint
-                            eaque at.</p>
-                        <a href="#blogs" class="btn">learn more</a>
-                    </div>
+                <div class="button">
+                    <button id="prev"><i class="fa-solid fa-circle-left"></i></button>
+                    <button id="next"><i class="fa-solid fa-circle-right "></i></button>
                 </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-
         </div>
+        <!--  -->
     </section>
 
     <!-- blogs ends -->
@@ -271,103 +476,28 @@
     </section>
     <!-- newsletter ends -->
 
-    <!-- review start -->
-    <section class="review" id="review">
-        <div class="heading">
-            <h2>client review</h2>
-        </div>
-
-        <div class=" swiper review-row">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <div class="client-review">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, perferendis architecto
-                            quasi eveniet aliquam sed?</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="../images/client1.jpg" alt="">
-                        </div>
-                        <div class="clientDetailed">
-                            <h3>Hardy Devid</h3>
-                            <p>UI / UX designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="client-review">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, perferendis architecto
-                            quasi eveniet aliquam sed?</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="../images/client1.jpg" alt="">
-                        </div>
-                        <div class="clientDetailed">
-                            <h3>Hardy Devid</h3>
-                            <p>UI / UX designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="client-review">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, perferendis architecto
-                            quasi eveniet aliquam sed?</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="../images/client1.jpg" alt="">
-                        </div>
-                        <div class="clientDetailed">
-                            <h3>Hardy Devid</h3>
-                            <p>UI / UX designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="client-review">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, perferendis architecto
-                            quasi eveniet aliquam sed?</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="../images/client1.jpg" alt="">
-                        </div>
-                        <div class="clientDetailed">
-                            <h3>Hardy Devid</h3>
-                            <p>UI / UX designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- review ends -->
-
     <!-- footer start -->
 
     <footer class="footer" id="contact">
         <div class="box-container">
             <div class="mainBox">
                 <div class="content">
-                    <a href="#"><img src="../images/logo.png" alt=""></a>
-                    <h1 class="logoName"> Sweet Cake </h1>
+                    <a href="#"><img src="../images/logo.png" alt="">
+                        <h1 class="logoName">Sweet Cake</h1>
+                    </a>
                 </div>
 
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta accusamus maxime quod.</p>
+                <p>Sweet Cake Website is an online platform for cake lovers. With a variety of delicious cakes and
+                    reliable service, it's the perfect destination for satisfying your sweet tooth cravings.</p>
 
             </div>
-            <div class="box">
+            <div class="box Quicklink-section">
                 <h3>Quick link</h3>
                 <a href="#"> <i class="fas fa-arrow-right"></i>Home</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i>product</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>blogs</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>review</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>about us</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>reservation form</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i>contact</a>
-
             </div>
             <div class="box">
                 <h3>Extra link</h3>
@@ -377,29 +507,25 @@
                 <a href="#"> <i class="fas fa-arrow-right"></i>payment method</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i>our services</a>
             </div>
-            <div class="box">
+            <div class="box" id="mailing">
                 <h3>Contact Info</h3>
                 <a href="#"> <i class="fas fa-phone"></i>+91 12222 34444</a>
-                <a href="#"> <i class="fas fa-envelope"></i>dannydesigner@gmail.com</a>
-
+                <a href="#"> <i class="fas fa-envelope"></i>mailtrantrungtien@gmail.com</a>
             </div>
 
         </div>
         <div class="share">
             <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
+            <a href="https://github.com/trantrungtien18/SweetCake_Website.git" class="fa-brands fa-github"> </a>
             <a href="#" class="fab fa-linkedin"></a>
             <a href="#" class="fab fa-pinterest"></a>
         </div>
         <div class="credit">
-            created by <span>Mr.Danny Designer </span> |all rights reserved !
         </div>
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../js/index.js"></script>
-
 </body>
 
 </html>
